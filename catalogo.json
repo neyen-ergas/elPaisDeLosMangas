@@ -1,0 +1,86 @@
+[
+{
+    "id": 1,
+    "titulo": "Berserk",
+    "precio": 600,
+    "img": "imgsCat/Berserk.jpg",
+    "autor": "Kentaro Miura"
+  },
+  {
+    "id": 2,
+    "titulo": "Chainsawman",
+    "precio": 550,
+    "img": "imgsCat/Csm.png",
+    "autor": "Tatsuki Fujimoto"
+  },
+  {
+    "id": 3,
+    "titulo": "Punpun",
+    "precio": 500,
+    "img": "imgsCat/Punpun.png",
+    "autor": "Inio Asano"
+  },
+  {
+    "id": 4,
+    "titulo": "Jujutsu Kaisen",
+    "precio": 450,
+    "img": "imgsCat/JujutsuKaisen.jpg",
+    "autor": "Gege Akutami"
+  },
+  {
+    "id": 5,
+    "titulo": "My Hero Academia",
+    "precio": 500,
+    "img": "imgsCat/MHA.png",
+    "autor": "Kohei Horikoshi"
+  },
+  {
+    "id": 6,
+    "titulo": "Blue Lock",
+    "precio": 600,
+    "img": "imgsCat/BlueLock.png",
+    "autor": "Muneyuki Kaneshiro"
+  },
+  {
+    "id": 7,
+    "titulo": "Haikyuu",
+    "precio": 550,
+    "img": "imgsCat/Haikyuu.png",
+    "autor": "Haruichi Furudate"
+  },
+  {
+    "id": 8,
+    "titulo": "Attack on Titan",
+    "precio": 500,
+    "img": "imgsCat/AOT.png",
+    "autor": "Hajime Isayama"
+  },
+  {
+    "id": 9,
+    "titulo": "Dorohedoro",
+    "precio": 450,
+    "img": "imgsCat/Dorohedoro.png",
+    "autor": "Q Hayashida"
+  },
+  {
+    "id": 10,
+    "titulo": "La Chica del Orilla del Mar",
+    "precio": 500,
+    "img": "imgsCat/OrillaDelMar.png",
+    "autor": "Inio Asano"
+  },
+  {
+    "id":11,
+    "titulo": "Nijigahara Holograph",
+    "precio": 500,
+    "img": "imgsCat/NijigaharaHolograph.jpg",
+    "autor": "Inio Asano"
+  },
+  {
+    "id":12,
+    "titulo": "Spy Family",
+    "precio": 500,
+    "img": "imgsCat/SpyFamily.png",
+    "autor": "Tetsuyo Endo"
+  }
+]

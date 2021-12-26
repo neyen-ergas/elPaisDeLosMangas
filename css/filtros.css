@@ -1,0 +1,79 @@
+.filtros-titulo{
+    font-family: "Merriweather Sans";
+}
+
+.select-opciones{
+    width: 100%;
+}
+
+.select-box {
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+}
+  
+.select-box .options-container {
+    background: #b7bedd;
+    color: black;
+    max-height: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.4s;
+    border-radius: 8px;
+    overflow-y: hidden;
+  
+    order: 1;
+}
+  
+.selected {
+    background: #b7bedd;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    color: black;
+    position: relative;
+  
+    order: 0;
+}
+  
+.selected::after {
+    content: "";
+    background: url("../icons/arrow-down.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  
+    position: absolute;
+    height: 100%;
+    width: 32px;
+    right: 10px;
+    top: 5px;
+  
+    transition: all 0.4s;
+}
+  
+.select-box .options-container.active {
+    max-height: 240px;
+    opacity: 1;
+}
+  
+.select-box .options-container.active + .selected::after {
+    transform: rotateX(180deg);
+    top: -6px;
+}
+  
+.select-box .option,
+.selected {
+    padding: 8px 10px;
+    cursor: pointer;
+}
+  
+.select-box .option:hover {
+    background: #414b57;
+}
+  
+.select-box label {
+    cursor: pointer;
+}
+  
+.select-box .option .radio {
+    display: none;
+}

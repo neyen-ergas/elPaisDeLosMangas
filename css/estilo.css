@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@800&family=Raleway:wght@300&family=Ramabhadra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+
+
+#contLista{
+    border-color: rgba(0, 0, 0, 0.3);
+    border-style: solid;
+    border-radius: 5%;
+    border-width: 1px;
+    background-color: #f1f2f2;
+    border-color: #f1f1f2;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3);
+    height: auto;
+    width: 100%;
+    padding-bottom: 1rem;
+    font-family: "Heebo";
+}   
+
+#listaProd{
+    list-style-type: none;
+}
+
+#tituCat{
+    font-weight: bold;
+}
+
+
+#contCarrito{
+    display: flex;
+    justify-content: center;
+    border-color: #f1f1f2;
+    border-style: solid;
+    border-radius: 10%;
+    border-width: 1px;
+    background-color: #f1f2f2;
+    height: 320px;
+    width: 15%;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+#carrito{
+    font-family: Merriweather Sans;
+    font-size: 35px;
+}
+#seccion-lista-carrito{
+    margin-bottom: 15vh;
+}
+
+#prod{
+    font-family: Raleway;
+    font-size: 25px;
+}
+
+#total{
+    font-size: 18px;
+}
+
+#totalNum{
+    font-size: 35px;
+    font-weight: bold;
+}
+
+#btnComprar{
+    font-size: 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+#btnBorrar{
+    font-size: 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+.footer{
+    margin-top: 2rem;
+    width: 100%;
+    background-color: grey;
+    color: white;
+    text-align: center;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .8rem;
+}
+.unLi{
+    height: 36px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(175,175,175,0.2);
+}
+.listaNombre{
+    position: absolute;
+    left: 30px;
+}
+
+.listaCant{
+    position: absolute;
+    right: 150px;
+}
+
+
+.sombras{
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3);
+}
+
+.sombras:hover{
+    transform: scale(1.022);
+    transition-duration: 800ms;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.colorbg{
+    background-image: url("https://i.pinimg.com/originals/8e/14/55/8e145599d4847e339828787162952035.gif");
+}
+
+.colorbgsection{
+    background-color: #919db7;
+}
+
+
+.merriweather{
+    font-family: "Merriweather Sans";
+}
+
+.raleway{
+    font-family: "Raleway";
+}
+
+.heebo{
+    font-family: "Heebo";
+}
+
+.prodAgregados{
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+
+.contContCarrito{   
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.posicion-catologo{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.cart_icon{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    padding: .6rem;
+    background-color: #919db7;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+body {
+    background-color: #e3e8ff;
+   }
+
