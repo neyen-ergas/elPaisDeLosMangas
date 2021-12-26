@@ -1,40 +1,44 @@
-let listaCatalogo = [];
-let listaCarrito = localStorage.listaCarrito ? JSON.parse(localStorage.listaCarrito) : [];
-let parrafo;
-let totalPagar;
-let prodAgregados;
-let searchBar = document.getElementById('searchBar');
+var listaCarrito = localStorage.listaCarrito ? JSON.parse(localStorage.listaCarrito) : [];
+var parrafo;
+var totalPagar;
+var prodAgregados;
+var searchBar = document.getElementById('searchBar');
 
 
-document.addEventListener("DOMContentLoaded", function(){
+async function init(){
     parrafo = document.getElementById("agrego")
     totalPagar = document.getElementById("totalNum")
     prodAgregados = document.getElementById("prodAgregados")
     contLista = document.getElementById("listaProd")
-    agegarCatalogoLista();
+    window.listaCatalogo = await agegarCatalogoLista();
+    console.log('elementos cargados');
+    cargarCatalogo();
     cargaCarritoPrevio();
-    cargarListaPrevio()
-    
-})
+    cargarListaPrevio();  
+}
 
 
 function agegarCatalogoLista(){
-    $.ajax({
-        url: "catalogo.json",
-        success: function(data){
-            data.forEach(prod => {
-                listaCatalogo.push(prod)
-            });
-            console.log(data)
-        },
-        error: function (error) {
-            console.log("ERROR")
-        }
-    });    
+    const productos = [];
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            url: "catalogo.json",
+            success: function(data){
+                data.forEach(prod => {
+                    productos.push(prod)
+                });
+                resolve(productos);
+            },
+            error: function (error) {
+                console.log("ERROR");
+                reject(error);
+            }
+        });
+    });
 }
 
 function agregarAlCarrito(idProd){
-    listaCatalogo.forEach(prod => {
+    window.listaCatalogo.forEach(prod => {
         if (prod.id == idProd) {
             listaCarrito.push(prod);
             localStorage.listaCarrito = JSON.stringify(listaCarrito);
@@ -61,7 +65,7 @@ function modificarTotal(){
 function listaProductoCantidad(){
     let productosYCantidad = [];
 
-    listaCatalogo.forEach(prodCatalogo => {
+    window.listaCatalogo.forEach(prodCatalogo => {
         let cont = 0;
         let prodActual = prodCatalogo;
 
@@ -95,8 +99,7 @@ function mostrarProdsAgregados(){
 
 function cargaCarritoPrevio(){
     if (listaCarrito.length>=1) {
-        mostrarProdsAgregados()
-        agegarCatalogoLista();
+        mostrarProdsAgregados();
     }
 }
 
@@ -115,16 +118,12 @@ function borrarCarrito(){
     
 }
 
-
-
 function actualizaLista() {
     contLista.innerHTML = htmlLista()
 }
 
-
 function htmlLista(){
     let html = " "
-    console.log(listaProductoCantidad())
     listaProductoCantidad().forEach(element => {
         if (element.cantidad>=1) {
             let nombre = element.producto.titulo;
@@ -135,7 +134,6 @@ function htmlLista(){
 
     return html;
 }
-
 
 function htmlListaUnidad(nombre, cantidad){
     return `
@@ -169,3 +167,4 @@ function mostrarNotif() {
         })
 }
     
+init();

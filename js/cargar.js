@@ -1,32 +1,14 @@
-let contCatalogo;
+var contCatalogo;
 
-
-window.onload = function (){
-
-    contCatalogo = document.getElementById("producto")
-
-    cargarCatalogo();
-
-}
 
 function cargarCatalogo(){
-    contCatalogo.innerHTML = " ";
+    const catalogoElement = document.getElementById('producto');
+    catalogoElement.innerHTML = " ";
     let html = " ";
-    $.ajax({
-        url: "catalogo.json",
-        success: function(data){
-            data.forEach(prod => {
-                html = html + htmlCatalogo(prod);
-            });
-            contCatalogo.innerHTML = html;
-            
-        },
-        error: function (error) {
-            console.log("ERROR")
-        }
+    window.listaCatalogo.forEach(prod => {
+        html = html + htmlCatalogo(prod);
     });
-
-    
+    catalogoElement.innerHTML = html;
 }
 
 function htmlCatalogo(prod){

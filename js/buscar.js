@@ -1,57 +1,39 @@
-let buscador;
-let prodBusqueda;
-let catalogo;
-let productos = [];
-
+var buscador;
+var prodBusqueda;
+var catalogo;
+var letters = "";
 
 document.addEventListener("DOMContentLoaded", function(){
     buscador = document.getElementById("buscador-text")
     catalogo = document.getElementById("producto")
-    cargarCatalogo();
-    filtrar();
-    
-    
-
+    buscador.addEventListener("keydown", filtrarCatalogo);
+    cargarCatalogo(catalogo);
+    dibujar(window.listaCatalogo);    
+    //filtrar();
 })
 
-function cargarCatalogo(){
-    
-    $.ajax({
-        url: "../catalogo.json",
-        success: function(data){
-            data.forEach(prod => {
-                productos.push(data)
-                console.log(data.titulo)
-            });
-            
-            
-        },
-        error: function (error) {
-            console.log("ERROR")
-        }
-    });
 
-    return productos;
+
+function filtrarCatalogo(letter){
+    if(letters.length>0){
+        if(letter.key === "Backspace"){
+            letters = letters.slice(0, -1);
+        }
+    }
+    if(letter.key !== "Backspace"){
+        letters = letters + String.fromCharCode(letter.keyCode).toLowerCase();
+    }
+    productosCatalogoFiltrado = window.listaCatalogo.filter(producto => producto.titulo.toLowerCase().includes(letters));
+    dibujar(productosCatalogoFiltrado);
 }
 
-function filtrar(){
-    
-    catalogo.innerHTML=' ';
-    let texto= buscador.value.toLowerCase();
-    for(let prod of productos){
-        
-        let titulo = prod.titulo.toLowerCase();
-        if(titulo.indexOf(texto) !== -1){
-            htmlCatalogo(prod)
-        }
-
-            if(contCatalogo.innerHTML=== ''){
-                contCatalogo.innerHTML +=`
-                <li>Producto no encontrado..</li>
-                `
-            }
-    }
-    buscador.addEventListener('keyup',filtrar())
+function dibujar(productosCatalogo){
+    catalogo.innerHTML = " ";
+    let html = " ";
+    productosCatalogo.forEach(prod => {
+        html = html + htmlCatalogo(prod);
+    });
+    catalogo.innerHTML = html;
 }
 
 function htmlCatalogo(prod){
@@ -76,5 +58,42 @@ function htmlCatalogo(prod){
     </li>
     `
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
